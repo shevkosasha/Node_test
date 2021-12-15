@@ -15,7 +15,7 @@ module.exports = function(app) {
     
     if (!req.query.amenityId || !req.query.timestamp) {
       // выдаем сообщение на случай если отсутствует один из необходимых для получения данных параметров и завершаем стрим
-      res.send('NO REQUIRED DATA IN PARAMETERS');
+      res.send('MISSING AMENITY ID AND/OR TIMESTAMP');
       res.end();
     } else {     
       
