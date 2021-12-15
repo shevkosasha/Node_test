@@ -75,10 +75,10 @@ module.exports = function(app) {
                 return (num >= 10) ? num : `0${num}`;
               }
               // получаем месяц, день, часы и минуты с даты
-              let month = date.getMonth() + 1;
-              let day = date.getDate();
-              let hours = date.getHours();
-              let minutes = date.getMinutes();              
+              let month = date.getUTCMonth() + 1;
+              let day = date.getUTCDate();
+              let hours = date.getUTCHours();
+              let minutes = date.getUTCMinutes();              
 
               if (reservations.length > 0) {
 
