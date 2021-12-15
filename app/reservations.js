@@ -127,9 +127,11 @@ module.exports = function(app) {
 
               } else {
                 // сообщение на случай, если по заданному amentityId ничего не найдено
-                let noReservationString = `No reservations for <b>${(amenityName) ? amenityName : amenityId}</b> on ${addZero(day)}/${addZero(month)}`;
+                let noReservationMsg = (amenityName) 
+                                       ? `We have no reservations for <b>${amenityName}</b> on ${addZero(day)}/${addZero(month)}`
+                                       : `We have no amentity with id=${amenityId}`;                
               
-                res.send(noReservationString);
+                res.send(noReservationMsg);
                 res.end();
               }     
   
@@ -141,6 +143,5 @@ module.exports = function(app) {
     
   });
 
-// localhost:3333/page?amenityId=3&timestamp=1592611200000
 };
 
